@@ -2,26 +2,13 @@ class Piece {
     constructor(data) {
         this.x = data.x;
         this.y = data.y;
-        this.img = data.img;
+        this.color = data.color;
     }
 
-    move(x, y) {
-        if(this.validate()) {
+    move(x, y, map) {
+        if(this.validate(x, y, map)) {
             this.x = x;
             this.y = y;
         }
     }
 }
-
-class Pawn extends Piece {
-    constructor() {
-
-    }
-
-    showPossiblesMoves(map) {
-        return [
-            { x: 0, y: 1}
-        ]
-    }
-}
-
